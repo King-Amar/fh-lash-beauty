@@ -3,235 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FH Lash & Beauty Salon | Links Road, Nyali</title>
+    <title>FH Lash & Beauty Salon | Petrocity, Links Rd</title>
     <style>
-        :root {
-            --bg-color: #0d0d0d;
-            --card-bg: #161616;
-            --accent-gold: #c5a059;
-            --text-primary: #f1f1f1;
-            --text-secondary: #aaaaaa;
-            --whatsapp-green: #25D366;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
-
         body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .mobile-container {
-            width: 100%;
-            max-width: 480px;
-            background-color: var(--bg-color);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            box-shadow: 0 0 30px rgba(0,0,0,0.8);
-        }
-
-        header {
-            padding: 30px 20px 20px 20px;
-            text-align: center;
-            background: linear-gradient(to bottom, #1a1a1a, var(--bg-color));
-            border-bottom: 1px solid #222;
-        }
-
-        .salon-badge {
-            display: inline-block;
-            background-color: rgba(197, 160, 89, 0.1);
-            color: var(--accent-gold);
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            padding: 6px 14px;
-            border-radius: 20px;
-            margin-bottom: 12px;
-            border: 1px solid rgba(197, 160, 89, 0.2);
-        }
-
-        h1 {
-            font-size: 26px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 6px;
-            color: #fff;
-        }
-
-        .location-info {
-            font-size: 13px;
-            color: var(--text-secondary);
-            margin-bottom: 12px;
-        }
-
-        .rating-box {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 13px;
-            color: var(--accent-gold);
-            font-weight: 600;
-        }
-
-        .content {
-            padding: 20px;
-            flex: 1;
+            background-color: #0b0b0b;
+            color: #f4f4f4;
+            line-height: 1.5;
             padding-bottom: 100px;
         }
-
-        .section-title {
-            font-size: 15px;
+        header {
+            background: #121212;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 1px solid #222;
+        }
+        header h1 {
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+            color: #d4af37;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--accent-gold);
+        }
+        header p {
+            font-size: 0.85rem;
+            color: #aaa;
+            margin-top: 5px;
+        }
+        .rating {
+            font-size: 0.85rem;
+            color: #d4af37;
+            margin-top: 8px;
+        }
+        .section {
+            padding: 25px 20px;
+        }
+        .section-title {
+            font-size: 1.1rem;
+            color: #d4af37;
+            text-transform: uppercase;
             margin-bottom: 15px;
-            margin-top: 10px;
-            border-left: 3px solid var(--accent-gold);
+            letter-spacing: 1.5px;
+            border-left: 3px solid #d4af37;
             padding-left: 10px;
         }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 25px;
-        }
-
         .service-card {
-            background-color: var(--card-bg);
+            background: #161616;
+            padding: 18px;
+            border-radius: 12px;
+            margin-bottom: 12px;
             border: 1px solid #222;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            transition: border-color 0.3s;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
-
         .service-card:hover {
-            border-color: var(--accent-gold);
+            border-color: #d4af37;
         }
-
-        .service-card h3 {
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--text-primary);
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-
-        .cta-container {
+        .service-header h3 {
+            font-size: 0.95rem;
+            color: #fff;
+        }
+        .service-header span {
+            font-size: 0.8rem;
+            color: #d4af37;
+        }
+        .service-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+            font-size: 0.85rem;
+            color: #999;
+        }
+        .service-card.active .service-details {
+            max-height: 150px;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #222;
+        }
+        .book-item-btn {
+            display: inline-block;
+            margin-top: 10px;
+            background: #25d366;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .floating-cta {
             position: fixed;
             bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 0;
             width: 100%;
-            max-width: 480px;
-            background: linear-gradient(to top, var(--bg-color) 80%, rgba(13,13,13,0));
-            padding: 20px;
+            background: rgba(11, 11, 11, 0.95);
+            padding: 15px 20px;
             text-align: center;
-            z-index: 100;
+            border-top: 1px solid #222;
+            backdrop-filter: blur(10px);
         }
-
-        .whatsapp-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background-color: var(--whatsapp-green);
-            color: #fff;
+        .cta-button {
+            display: block;
+            width: 100%;
+            background-color: #25d366;
+            color: white;
+            padding: 12px;
+            border-radius: 25px;
+            font-weight: bold;
             text-decoration: none;
-            padding: 16px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 15px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            transition: background-color 0.2s;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
-
-        .whatsapp-btn:active {
-            transform: scale(0.98);
-        }
-
         footer {
             text-align: center;
             padding: 20px;
-            font-size: 11px;
+            font-size: 0.75rem;
             color: #666;
-            border-top: 1px solid #1a1a1a;
-            margin-top: 20px;
         }
-
         footer span {
-            color: var(--accent-gold);
+            color: #aaa;
             font-weight: 600;
         }
     </style>
 </head>
 <body>
 
-    <div class="mobile-container">
-        <header>
-            <div class="salon-badge">Luxury Beauty Studio</div>
-            <h1>FH Lash & Beauty Salon</h1>
-            <div class="location-info">Petrocity, Links Rd, Mombasa</div>
-            <div class="rating-box">
-                ★ 4.8 (38 Reviews)
-            </div>
-        </header>
+    <header>
+        <h1>FH Lash & Beauty Salon</h1>
+        <p>Petrocity, Links Rd, Mombasa</p>
+        <div class="rating">★ 4.8 (38 Reviews)</div>
+    </header>
 
-        <div class="content">
-            <div class="section-title">Featured Services</div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Eyelash Extensions & Lifts</h3>
-                </div>
-                <div class="service-card">
-                    <h3>Bridal & Wedding Makeup</h3>
-                </div>
-                <div class="service-card">
-                    <h3>Keratin Treatments</h3>
-                </div>
-                <div class="service-card">
-                    <h3>Acrylic Nails & Manicures</h3>
-                </div>
-                <div class="service-card">
-                    <h3>Brazilian & Body Waxing</h3>
-                </div>
-                <div class="service-card">
-                    <h3>Microblading & Threading</h3>
-                </div>
+    <div class="section">
+        <div class="section-title">Featured Services</div>
+        
+        <div class="service-card" onclick="toggleService(this)">
+            <div class="service-header">
+                <h3>Eyelash Extensions & Lifts</h3>
+                <span>Tap for info ▼</span>
             </div>
-
-            <div class="section-title">Hair & Styling</div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Weaves & Wigs Installation</h3>
-                </div>
-                <div class="service-card">
-                    <h3>Dreadlocs / Sista Locs</h3>
-                </div>
+            <div class="service-details">
+                <p>Custom lightweight extensions or natural lash lifts. Lasts up to 6 weeks.</p>
+                <a href="https://wa.me/254700000000?text=Hello,%20I%20would%20like%20to%20book%20Eyelash%20Extensions%20%26%20Lifts." class="book-item-btn">Book This Service</a>
             </div>
-
-            <footer>
-                Powered by <span>AV Digital Solutions</span>
-            </footer>
         </div>
 
-        <div class="cta-container">
-            <a href="https://wa.me/254118039888?text=Hi%20FH%20Lash%20%26%20Beauty,%20I%20would%20like%20to%20book%20an%20appointment." class="whatsapp-btn" target="_blank">
-                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                Book via WhatsApp
-            </a>
+        <div class="service-card" onclick="toggleService(this)">
+            <div class="service-header">
+                <h3>Bridal & Wedding Makeup</h3>
+                <span>Tap for info ▼</span>
+            </div>
+            <div class="service-details">
+                <p>Flawless full-face glam customized for your special day. Trials available.</p>
+                <a href="https://wa.me/254700000000?text=Hello,%20I%20would%20like%20to%20book%20Bridal%20%26%20Wedding%20Makeup." class="book-item-btn">Book This Service</a>
+            </div>
+        </div>
+
+        <div class="service-card" onclick="toggleService(this)">
+            <div class="service-header">
+                <h3>Keratin Treatments</h3>
+                <span>Tap for info ▼</span>
+            </div>
+            <div class="service-details">
+                <p>Deep smoothing treatment to eliminate frizz and deliver silky, straight hair.</p>
+                <a href="https://wa.me/254700000000?text=Hello,%20I%20would%20like%20to%20book%20Keratin%20Treatments." class="book-item-btn">Book This Service</a>
+            </div>
+        </div>
+
+        <div class="service-card" onclick="toggleService(this)">
+            <div class="service-header">
+                <h3>Acrylic Nails & Manicures</h3>
+                <span>Tap for info ▼</span>
+            </div>
+            <div class="service-details">
+                <p>Long-lasting acrylic sets, custom nail art, and luxury gel manicures/pedicures.</p>
+                <a href="https://wa.me/254700000000?text=Hello,%20I%20would%20like%20to%20book%20Acrylic%20Nails%20%26%20Manicures." class="book-item-btn">Book This Service</a>
+            </div>
         </div>
     </div>
+
+    <footer>
+        Powered by <span>AV Digital Solutions</span>
+    </footer>
+
+    <div class="floating-cta">
+        <a href="https://wa.me/254118039888?text=Hello,%20I%20would%20like%20to%20inquire%20about%20your%20services." class="cta-button">General WhatsApp Inquiry</a>
+    </div>
+
+    <script>
+        function toggleService(card) {
+            // Toggle active class on clicked card
+            card.classList.toggle('active');
+        }
+    </script>
 
 </body>
 </html>
