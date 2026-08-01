@@ -19,13 +19,13 @@
         }
         header {
             background: #121212;
-            padding: 30px 20px;
+            padding: 35px 20px 25px;
             text-align: center;
             border-bottom: 1px solid #222;
         }
         header h1 {
-            font-size: 1.6rem;
-            letter-spacing: 1px;
+            font-size: 1.5rem;
+            letter-spacing: 1.5px;
             color: #d4af37;
             text-transform: uppercase;
         }
@@ -34,16 +34,25 @@
             color: #aaa;
             margin-top: 5px;
         }
-        .rating {
-            font-size: 0.85rem;
+        .badge-row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .badge {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
             color: #d4af37;
-            margin-top: 8px;
         }
         .section {
             padding: 25px 20px;
         }
         .section-title {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: #d4af37;
             text-transform: uppercase;
             margin-bottom: 15px;
@@ -68,12 +77,28 @@
             justify-content: space-between;
             align-items: center;
         }
-        .service-header h3 {
+        .service-name {
             font-size: 0.95rem;
             color: #fff;
+            font-weight: 500;
         }
-        .service-header span {
-            font-size: 0.8rem;
+        .service-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .service-price {
+            font-size: 0.85rem;
+            color: #d4af37;
+            font-weight: 600;
+        }
+        .toggle-icon {
+            font-size: 0.75rem;
+            color: #888;
+            transition: transform 0.3s ease;
+        }
+        .service-card.active .toggle-icon {
+            transform: rotate(180deg);
             color: #d4af37;
         }
         .service-details {
@@ -81,24 +106,25 @@
             overflow: hidden;
             transition: max-height 0.3s ease-in-out;
             font-size: 0.85rem;
-            color: #999;
+            color: #aaa;
         }
         .service-card.active .service-details {
-            max-height: 150px;
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px solid #222;
+            max-height: 180px;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #252525;
         }
         .book-item-btn {
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 12px;
             background: #25d366;
             color: white;
-            padding: 6px 14px;
+            padding: 7px 16px;
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: bold;
             text-decoration: none;
+            box-shadow: 0 2px 8px rgba(37, 211, 102, 0.2);
         }
         .floating-cta {
             position: fixed;
@@ -120,7 +146,7 @@
             border-radius: 25px;
             font-weight: bold;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
@@ -142,53 +168,68 @@
     <header>
         <h1>FH Lash & Beauty Salon</h1>
         <p>Petrocity, Links Rd, Mombasa</p>
-        <div class="rating">★ 4.8 (38 Reviews)</div>
+        <div class="badge-row">
+            <span class="badge">★ 4.8 (38 Reviews)</span>
+            <span class="badge">Open Daily</span>
+        </div>
     </header>
 
     <div class="section">
-        <div class="section-title">Featured Services</div>
+        <div class="section-title">Featured Treatments</div>
         
         <div class="service-card" onclick="toggleService(this)">
             <div class="service-header">
-                <h3>Eyelash Extensions & Lifts</h3>
-                <span>Tap for info ▼</span>
+                <span class="service-name">Eyelash Extensions & Lifts</span>
+                <div class="service-right">
+                    <span class="service-price">from 3,500 KES</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
             </div>
             <div class="service-details">
-                <p>Custom lightweight extensions or natural lash lifts. Lasts up to 6 weeks.</p>
-                <a href="https://wa.me/254700000000?text=Hello,%20I%20would%20like%20to%20book%20Eyelash%20Extensions%20%26%20Lifts." class="book-item-btn">Book This Service</a>
+                <p>Custom lightweight classic/volume extensions or natural lash lifts. Lasts up to 6 weeks with proper care.</p>
+                <a href="https://wa.me/254700000000?text=Hello,%20I%20would%20like%20to%20book%20Eyelash%20Extensions%20%26%20Lifts." class="book-item-btn">Book This Treatment</a>
             </div>
         </div>
 
         <div class="service-card" onclick="toggleService(this)">
             <div class="service-header">
-                <h3>Bridal & Wedding Makeup</h3>
-                <span>Tap for info ▼</span>
+                <span class="service-name">Bridal & Wedding Makeup</span>
+                <div class="service-right">
+                    <span class="service-price">from 6,000 KES</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
             </div>
             <div class="service-details">
-                <p>Flawless full-face glam customized for your special day. Trials available.</p>
-                <a href="https://wa.me/254700000000?text=Hello,%20I%20would%20like%20to%20book%20Bridal%20%26%20Wedding%20Makeup." class="book-item-btn">Book This Service</a>
+                <p>Flawless full-face glam customized for your special day, including skin prep and setting spray finish. Trials available.</p>
+                <a href="https://wa.me/254700000000?text=Hello,%20I%20would%20like%20to%20book%20Bridal%20%26%20Wedding%20Makeup." class="book-item-btn">Book This Treatment</a>
             </div>
         </div>
 
         <div class="service-card" onclick="toggleService(this)">
             <div class="service-header">
-                <h3>Keratin Treatments</h3>
-                <span>Tap for info ▼</span>
+                <span class="service-name">Keratin Treatments</span>
+                <div class="service-right">
+                    <span class="service-price">from 5,000 KES</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
             </div>
             <div class="service-details">
-                <p>Deep smoothing treatment to eliminate frizz and deliver silky, straight hair.</p>
-                <a href="https://wa.me/254700000000?text=Hello,%20I%20would%20like%20to%20book%20Keratin%20Treatments." class="book-item-btn">Book This Service</a>
+                <p>Deep smoothing protein treatment designed to eliminate frizz, seal cuticles, and deliver silky straight hair for months.</p>
+                <a href="https://wa.me/254700000000?text=Hello,%20I%20would%20like%20to%20book%20Keratin%20Treatments." class="book-item-btn">Book This Treatment</a>
             </div>
         </div>
 
         <div class="service-card" onclick="toggleService(this)">
             <div class="service-header">
-                <h3>Acrylic Nails & Manicures</h3>
-                <span>Tap for info ▼</span>
+                <span class="service-name">Acrylic Nails & Manicures</span>
+                <div class="service-right">
+                    <span class="service-price">from 2,500 KES</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
             </div>
             <div class="service-details">
-                <p>Long-lasting acrylic sets, custom nail art, and luxury gel manicures/pedicures.</p>
-                <a href="https://wa.me/254700000000?text=Hello,%20I%20would%20like%20to%20book%20Acrylic%20Nails%20%26%20Manicures." class="book-item-btn">Book This Service</a>
+                <p>Long-lasting full acrylic sets, custom nail art, structured gel overlays, and luxury spa manicures/pedicures.</p>
+                <a href="https://wa.me/254700000000?text=Hello,%20I%20would%20like%20to%20book%20Acrylic%20Nails%20%26%20Manicures." class="book-item-btn">Book This Treatment</a>
             </div>
         </div>
     </div>
@@ -198,12 +239,11 @@
     </footer>
 
     <div class="floating-cta">
-        <a href="https://wa.me/254118039888?text=Hello,%20I%20would%20like%20to%20inquire%20about%20your%20services." class="cta-button">General WhatsApp Inquiry</a>
+        <a href="https://wa.me/254118039888?text=Hello,%20I%20would%20like%20to%20inquire%20about%20your%20salon%20services." class="cta-button">General WhatsApp Inquiry</a>
     </div>
 
     <script>
         function toggleService(card) {
-            // Toggle active class on clicked card
             card.classList.toggle('active');
         }
     </script>
