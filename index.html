@@ -13,15 +13,30 @@
         }
         body {
             background-color: #0b0b0b;
+            background-image: url('FH BACKGROUND.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: #f4f4f4;
             line-height: 1.5;
             padding-bottom: 100px;
         }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 11, 11, 0.92);
+            z-index: -1;
+        }
         header {
-            background: #121212;
+            background: rgba(18, 18, 18, 0.85);
             padding: 35px 20px 25px;
             text-align: center;
             border-bottom: 1px solid #222;
+            backdrop-filter: blur(10px);
         }
         header h1 {
             font-size: 1.5rem;
@@ -51,6 +66,33 @@
         .section {
             padding: 25px 20px;
         }
+        .about-card {
+            background: rgba(22, 22, 22, 0.85);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            margin-bottom: 20px;
+            backdrop-filter: blur(5px);
+        }
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            text-align: center;
+        }
+        .about-img {
+            width: 100%;
+            max-height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #d4af37;
+        }
+        .about-text p {
+            font-size: 0.85rem;
+            color: #ddd;
+            line-height: 1.6;
+        }
         .section-title {
             font-size: 1.05rem;
             color: #d4af37;
@@ -61,13 +103,14 @@
             padding-left: 10px;
         }
         .service-card {
-            background: #161616;
+            background: rgba(22, 22, 22, 0.9);
             padding: 18px;
             border-radius: 12px;
             margin-bottom: 12px;
             border: 1px solid #222;
             cursor: pointer;
             transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
         }
         .service-card:hover {
             border-color: #d4af37;
@@ -104,15 +147,23 @@
         .service-details {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-in-out;
+            transition: max-height 0.4s ease-in-out;
             font-size: 0.85rem;
             color: #aaa;
         }
         .service-card.active .service-details {
-            max-height: 180px;
+            max-height: 400px;
             margin-top: 12px;
             padding-top: 12px;
             border-top: 1px solid #252525;
+        }
+        .service-img-preview {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #333;
         }
         .book-item-btn {
             display: inline-block;
@@ -126,6 +177,38 @@
             text-decoration: none;
             box-shadow: 0 2px 8px rgba(37, 211, 102, 0.2);
         }
+        .review-card {
+            background: rgba(22, 22, 22, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #222;
+            font-size: 0.82rem;
+            backdrop-filter: blur(5px);
+        }
+        .review-author {
+            color: #d4af37;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .review-text {
+            color: #ccc;
+            margin-bottom: 8px;
+        }
+        .google-reviews-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #d4af37;
+            font-size: 0.85rem;
+            text-decoration: underline;
+        }
+        .map-container {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #333;
+            margin-top: 10px;
+        }
         .floating-cta {
             position: fixed;
             bottom: 0;
@@ -136,6 +219,7 @@
             text-align: center;
             border-top: 1px solid #222;
             backdrop-filter: blur(10px);
+            z-index: 10;
         }
         .cta-button {
             display: block;
@@ -170,11 +254,20 @@
         <p>Petrocity, Links Rd, Mombasa</p>
         <div class="badge-row">
             <span class="badge">★ 4.8 (38 Reviews)</span>
-            <span class="badge">Open Daily</span>
+            <span class="badge">Ladies Only</span>
         </div>
     </header>
 
     <div class="section">
+        <div class="about-card">
+            <div class="about-content">
+                <img src="FH .webp" alt="FH Lash & Beauty Salon" class="about-img">
+                <div class="about-text">
+                    <p>Welcome to FH LASH & BEAUTY SALON, your ultimate destination for luxurious lash and beauty treatments! Nestled in the heart of Mombasa, we pride ourselves on offering a wide range of services for ladies only, designed to enhance your natural beauty and boost your confidence. <strong>FEEL GOOD, LOOK GOOD!</strong></p>
+                </div>
+            </div>
+        </div>
+
         <div class="section-title">Featured Treatments</div>
         
         <div class="service-card" onclick="toggleService(this)">
@@ -186,6 +279,7 @@
                 </div>
             </div>
             <div class="service-details">
+                <img src="FH4.webp" alt="Eyelash Extensions" class="service-img-preview">
                 <p>Custom lightweight classic/volume extensions or natural lash lifts. Lasts up to 6 weeks with proper care.</p>
                 <a href="https://wa.me/447749452288?text=Hello,%20I%20would%20like%20to%20book%20Eyelash%20Extensions%20%26%20Lifts." class="book-item-btn">Book This Treatment</a>
             </div>
@@ -228,9 +322,34 @@
                 </div>
             </div>
             <div class="service-details">
+                <img src="FH 3.webp" alt="Acrylic Nails" class="service-img-preview">
                 <p>Long-lasting full acrylic sets, custom nail art, structured gel overlays, and luxury spa manicures/pedicures.</p>
                 <a href="https://wa.me/447749452288?text=Hello,%20I%20would%20like%20to%20book%20Acrylic%20Nails%20%26%20Manicures." class="book-item-btn">Book This Treatment</a>
             </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 30px;">Client Reviews</div>
+        
+        <div class="review-card">
+            <div class="review-author">Melissa Atanasio ★★★★★</div>
+            <div class="review-text">"I’ve been getting my lashes done at FH Lash & Beauty for a while now when in Mombasa and I’m absolutely in love with the results! Fatma is so professional..."</div>
+        </div>
+
+        <div class="review-card">
+            <div class="review-author">Nazaeli Mrinji ★★★★★</div>
+            <div class="review-text">"This was my first time getting lash extensions and FH Lash & Beauty made the experience so easy and comfortable..."</div>
+        </div>
+
+        <div class="review-card">
+            <div class="review-author">Vasiliki Boura ★★★★★</div>
+            <div class="review-text">"Highly recommended! The staff is great, friendly and the whole salon is amazing, clean and with a great atmosphere. I did my manicure and also hair!"</div>
+        </div>
+
+        <a href="https://www.google.com/search?q=FH+Lash+%26+Beauty+Salon+Mombasa+reviews" target="_blank" class="google-reviews-link">View all 38 reviews on Google →</a>
+
+        <div class="section-title" style="margin-top: 30px;">Find Us</div>
+        <div class="map-container">
+            <iframe width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" src="https://maps.google.com/maps?q=Petrocity,+Links+Rd,+Mombasa&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
         </div>
     </div>
 
