@@ -12,119 +12,141 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
         body {
-            background-color: #0b0b0b;
-            /* Set interior photo as main background */
-            background-image: url('image_5.png'); 
+            background-color: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+            padding-bottom: 90px;
+        }
+        .hero-banner {
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.8), rgba(0,0,0,0.95)), url('fh-place.webp');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
-            color: #f4f4f4;
-            line-height: 1.6;
-            padding-bottom: 100px; /* Space for floating CTA */
-        }
-        /* Dark overlay to make content readable over background image */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(11, 11, 11, 0.9); /* Darker overlay */
-            z-index: -1;
-        }
-        header {
-            background: rgba(18, 18, 18, 0.92);
-            padding: 40px 20px 30px;
+            padding: 50px 20px 40px;
             text-align: center;
-            border-bottom: 2px solid #d4af37;
-            backdrop-filter: blur(10px);
+            border-bottom: 4px solid #d4af37;
         }
-        header h1 {
-            font-size: 2rem;
-            letter-spacing: 2px;
+        .hero-logo {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #d4af37;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+            margin-bottom: 15px;
+        }
+        .hero-banner h1 {
+            font-size: 2.1rem;
+            letter-spacing: 3px;
             color: #d4af37;
             text-transform: uppercase;
-            font-weight: 700;
+            font-weight: 900;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.9);
+            margin-bottom: 5px;
         }
-        header p {
+        .hero-banner p {
             font-size: 0.95rem;
-            color: #ddd;
-            margin-top: 8px;
+            color: #ffffff;
+            font-weight: 600;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.9);
         }
         .badge-row {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
             margin-top: 15px;
         }
         .badge {
-            background: #1a1a1a;
+            background: rgba(255, 255, 255, 0.95);
             border: 1px solid #d4af37;
-            padding: 6px 12px;
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.8rem;
-            color: #d4af37;
-            font-weight: 600;
+            font-size: 0.75rem;
+            color: #b38f27;
+            font-weight: 700;
         }
         .main-container {
-            max-width: 800px;
-            margin: 0 auto;
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
             padding: 30px 20px;
         }
-        .section-block {
-            background: rgba(22, 22, 22, 0.95);
-            padding: 25px;
-            border-radius: 15px;
-            border: 1px solid #333;
-            margin-bottom: 30px;
+        .main-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('fh-lashes.webp');
+            background-repeat: repeat;
+            background-position: center top;
+            background-size: 100% auto;
+            opacity: 0.35;
+            filter: sepia(1) hue-rotate(5deg) saturate(2.5);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .main-container > * {
+            position: relative;
+            z-index: 1;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .about-card {
+            background: rgba(255, 255, 255, 0.94);
             backdrop-filter: blur(5px);
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid #eaeaea;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
         }
         .about-content {
             display: flex;
             flex-direction: column;
             gap: 20px;
             align-items: center;
+            text-align: center;
         }
         .about-img {
             width: 100%;
-            max-width: 350px;
-            height: auto;
+            max-height: 320px;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 12px;
             border: 2px solid #d4af37;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
-        .about-text {
-            text-align: center;
-            font-size: 1rem;
-            color: #eee;
+        .about-text p {
+            font-size: 0.95rem;
+            color: #444;
         }
         .about-text strong {
-            color: #d4af37;
+            color: #b38f27;
         }
         .section-title {
-            font-size: 1.3rem;
-            color: #d4af37;
+            font-size: 1.2rem;
+            color: #111111;
             text-transform: uppercase;
-            margin-bottom: 20px;
-            letter-spacing: 1.8px;
+            margin-bottom: 18px;
+            letter-spacing: 2px;
             border-left: 4px solid #d4af37;
             padding-left: 12px;
-            font-weight: 700;
+            font-weight: 800;
         }
         .service-card {
-            background: #1a1a1a;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(5px);
             padding: 20px;
             border-radius: 12px;
             margin-bottom: 15px;
-            border: 1px solid #222;
+            border: 1px solid #e6e6e6;
             cursor: pointer;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
         }
         .service-card:hover {
             border-color: #d4af37;
-            background: #222;
         }
         .service-header {
             display: flex;
@@ -132,9 +154,9 @@
             align-items: center;
         }
         .service-name {
-            font-size: 1.1rem;
-            color: #fff;
-            font-weight: 600;
+            font-size: 1.05rem;
+            color: #b38f27;
+            font-weight: 700;
         }
         .service-right {
             display: flex;
@@ -142,9 +164,9 @@
             gap: 12px;
         }
         .service-price {
-            font-size: 1rem;
-            color: #d4af37;
-            font-weight: 700;
+            font-size: 0.95rem;
+            color: #b38f27;
+            font-weight: 800;
         }
         .toggle-icon {
             font-size: 0.8rem;
@@ -153,104 +175,84 @@
         }
         .service-card.active .toggle-icon {
             transform: rotate(180deg);
-            color: #d4af37;
+            color: #b38f27;
         }
         .service-details {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s ease-in-out, padding 0.3s ease-in-out;
-            font-size: 0.95rem;
-            color: #ccc;
+            transition: max-height 0.4s ease-in-out;
+            font-size: 0.9rem;
+            color: #555;
         }
         .service-card.active .service-details {
-            max-height: 500px; /* Adjusted for content */
+            max-height: 700px;
             margin-top: 15px;
             padding-top: 15px;
-            border-top: 1px solid #333;
-        }
-        .service-img-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin-bottom: 15px;
+            border-top: 1px solid #f0f0f0;
         }
         .service-img-preview {
             width: 100%;
-            height: 150px;
+            height: 220px;
             object-fit: cover;
-            border-radius: 8px;
-            border: 1px solid #444;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #d4af37;
         }
         .book-item-btn {
             display: inline-block;
             margin-top: 15px;
-            background: #25d366; /* WhatsApp green */
+            background: #25d366;
             color: white;
-            padding: 10px 20px;
+            padding: 10px 22px;
             border-radius: 25px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: bold;
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 3px 8px rgba(37, 211, 102, 0.3);
-            transition: background 0.2s;
-        }
-        .book-item-btn:hover {
-            background: #1ebd5b;
-        }
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
+            letter-spacing: 1px;
         }
         .review-card {
-            background: #1a1a1a;
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid #222;
-            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(5px);
+            padding: 18px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #eaeaea;
+            font-size: 0.88rem;
         }
         .review-author {
-            color: #d4af37;
-            font-weight: 600;
+            color: #b38f27;
+            font-weight: 700;
             margin-bottom: 6px;
-            display: flex;
-            justify-content: space-between;
-        }
-        .review-stars {
-            color: #f1c40f; /* Gold star color */
         }
         .review-text {
-            color: #ddd;
+            color: #444;
             font-style: italic;
         }
         .google-reviews-link {
             display: block;
             text-align: center;
-            margin-top: 25px;
-            color: #d4af37;
+            margin-top: 20px;
+            color: #111111;
             font-size: 0.9rem;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .google-reviews-link:hover {
             text-decoration: underline;
+            font-weight: 700;
         }
         .map-container {
             border-radius: 12px;
             overflow: hidden;
             border: 2px solid #d4af37;
             margin-top: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.94);
+            padding: 5px;
         }
         .floating-cta {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            background: rgba(18, 18, 18, 0.97);
-            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 20px;
             text-align: center;
             border-top: 2px solid #25d366;
             backdrop-filter: blur(10px);
@@ -263,66 +265,50 @@
             margin: 0 auto;
             background-color: #25d366;
             color: white;
-            padding: 15px;
+            padding: 13px;
             border-radius: 30px;
             font-weight: bold;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
-            transition: transform 0.2s;
-        }
-        .cta-button:hover {
-            transform: translateY(-2px);
         }
         footer {
             text-align: center;
-            padding: 30px 20px;
+            padding: 25px;
             font-size: 0.8rem;
-            color: #888;
-            margin-bottom: 80px; /* Ensure footer is above floating CTA */
+            color: #777;
         }
         footer span {
-            color: #d4af37;
-            font-weight: 600;
-        }
-
-        /* Responsive adjustments */
-        @media (min-width: 600px) {
-            header h1 { font-size: 2.5rem; }
-            .main-container { padding: 40px 30px; }
-            .section-block { padding: 30px; }
-            .about-content { flex-direction: row; justify-content: center; text-align: left; }
-            .about-text { text-align: left; }
+            color: #b38f27;
+            font-weight: 700;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>FH Lash & Beauty Salon</h1>
+    <div class="hero-banner">
+        <img src="fh-lashes.webp" alt="FH Lash & Beauty Logo" class="hero-logo">
+        <h1>FH LASH & BEAUTY SALON</h1>
         <p>Petrocity, Links Rd, Mombasa</p>
         <div class="badge-row">
             <span class="badge">★ 4.8 (38 Reviews)</span>
             <span class="badge">Ladies Only</span>
         </div>
-    </header>
+    </div>
 
     <div class="main-container">
-        
-        <div class="section-block">
+        <div class="about-card">
             <div class="about-content">
-                <img src="image_1.png" alt="Client with red nails" class="about-img">
+                <img src="fh-about.webp" alt="FH Lash & Beauty Salon" class="about-img">
                 <div class="about-text">
-                    <p>Welcome to <strong>FH LASH & BEAUTY SALON</strong>, your ultimate destination for luxurious lash and beauty treatments! Nestled in the heart of Mombasa, we pride ourselves on offering a wide range of services for ladies only, designed to enhance your natural beauty and boost your confidence. <br><br><strong>FEEL GOOD, LOOK GOOD!</strong></p>
+                    <p>Welcome to <strong>FH LASH & BEAUTY SALON</strong>, your ultimate destination for luxurious lash and beauty treatments! Nestled in the heart of Mombasa, we pride ourselves on offering a wide range of services for ladies only, designed to enhance your natural beauty and boost your confidence.<br><br><strong>FEEL GOOD, LOOK GOOD!</strong></p>
                 </div>
             </div>
         </div>
 
         <div class="section-title">Featured Treatments</div>
         
-        <!-- Service 1: Eyelash Extensions & Lifts -->
         <div class="service-card" onclick="toggleService(this)">
             <div class="service-header">
                 <span class="service-name">Eyelash Extensions & Lifts</span>
@@ -332,16 +318,12 @@
                 </div>
             </div>
             <div class="service-details">
-                <div class="service-img-grid">
-                    <img src="image_3.png" alt="Detailed lash extensions" class="service-img-preview">
-                    <img src="image_2.png" alt="Beautiful curly hairstyle" class="service-img-preview">
-                </div>
+                <img src="fh-eyes.webp" alt="Eyelash Extensions" class="service-img-preview">
                 <p>Custom lightweight classic/volume extensions or natural lash lifts. Lasts up to 6 weeks with proper care.</p>
-                <a href="https://wa.me/447749452288?text=Hello,%20I%20would%20like%20to%20book%20Eyelash%20Extensions%20%26%20Lifts." class="book-item-btn">Book This Treatment</a>
+                <a href="https://wa.me/447749452288?text=Hello,%20I%20would%20like%20to%20book%20Eyelash%20Extensions%20%26%20Lifts." class="book-item-btn">Book via WhatsApp</a>
             </div>
         </div>
 
-        <!-- Service 2: Bridal & Wedding Makeup -->
         <div class="service-card" onclick="toggleService(this)">
             <div class="service-header">
                 <span class="service-name">Bridal & Wedding Makeup</span>
@@ -351,12 +333,12 @@
                 </div>
             </div>
             <div class="service-details">
+                <img src="fh-colour.webp" alt="Bridal Makeup" class="service-img-preview">
                 <p>Flawless full-face glam customized for your special day, including skin prep and setting spray finish. Trials available.</p>
-                <a href="https://wa.me/447749452288?text=Hello,%20I%20would%20like%20to%20book%20Bridal%20%26%20Wedding%20Makeup." class="book-item-btn">Book This Treatment</a>
+                <a href="https://wa.me/447749452288?text=Hello,%20I%20would%20like%20to%20book%20Bridal%20%26%20Wedding%20Makeup." class="book-item-btn">Book via WhatsApp</a>
             </div>
         </div>
 
-        <!-- Service 3: Keratin Treatments -->
         <div class="service-card" onclick="toggleService(this)">
             <div class="service-header">
                 <span class="service-name">Keratin Treatments</span>
@@ -366,5 +348,64 @@
                 </div>
             </div>
             <div class="service-details">
+                <img src="fh-hair.webp" alt="Hair Styling" class="service-img-preview">
                 <p>Deep smoothing protein treatment designed to eliminate frizz, seal cuticles, and deliver silky straight hair for months.</p>
-                <a href="
+                <a href="https://wa.me/447749452288?text=Hello,%20I%20would%20like%20to%20book%20Keratin%20Treatments." class="book-item-btn">Book via WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="service-card" onclick="toggleService(this)">
+            <div class="service-header">
+                <span class="service-name">Acrylic Nails & Manicures</span>
+                <div class="service-right">
+                    <span class="service-price">from 2,500 KES</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+            </div>
+            <div class="service-details">
+                <img src="fh-nails.webp" alt="Acrylic Nails" class="service-img-preview">
+                <p>Long-lasting full acrylic sets, custom nail art, structured gel overlays, and luxury spa manicures/pedicures.</p>
+                <a href="https://wa.me/447749452288?text=Hello,%20I%20would%20like%20to%20book%20Acrylic%20Nails%20%26%20Manicures." class="book-item-btn">Book via WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 35px;">Client Reviews</div>
+        
+        <div class="review-card">
+            <div class="review-author">Melissa Atanasio ★★★★★</div>
+            <div class="review-text">"I’ve been getting my lashes done at FH Lash & Beauty for a while now when in Mombasa and I’m absolutely in love with the results! Fatma is so professional..."</div>
+        </div>
+
+        <div class="review-card">
+            <div class="review-author">Nazaeli Mrinji ★★★★★</div>
+            <div class="review-text">"This was my first time getting lash extensions and FH Lash & Beauty made the experience so easy and comfortable..."</div>
+        </div>
+
+        <div class="review-card">
+            <div class="review-author">Vasiliki Boura ★★★★★</div>
+            <div class="review-text">"Highly recommended! The staff is great, friendly and the whole salon is amazing, clean and with a great atmosphere. I did my manicure and also hair!"</div>
+        </div>
+
+        <a href="https://www.google.com/search?q=FH+Lash+%26+Beauty+Salon+Mombasa+reviews" target="_blank" class="google-reviews-link">View all 38 reviews on Google →</a>
+
+        <div class="section-title" style="margin-top: 35px;">Find Us</div>
+        <div class="map-container">
+            <iframe width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" src="https://maps.google.com/maps?q=Petrocity,+Links+Rd,+Mombasa&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        Powered by <span>AV Digital Solutions</span>
+    </footer>
+
+    <div class="floating-cta">
+        <a href="https://wa.me/447749452288?text=Hello,%20I%20would%20like%20to%20inquire%20about%20your%20salon%20services." class="cta-button">General WhatsApp Inquiry</a>
+    </div>
+
+    <script>
+        function toggleService(card) {
+            card.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
